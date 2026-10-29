@@ -478,7 +478,7 @@ false — если ответ раскрывает что она ИИ/Claude/Cha
       messages = [
         ...messages,
         { role: "assistant", content: raw },
-        { role: "user", content: "перегенерируй. без ИИ/ассистента/Claude, без markdown, просто живой короткий ответ в тг." }
+        { role: "system", content: "Ответь коротким естественным сообщением от лица персонажа по правилам роли. Без мета-комментариев и разметки." }
       ];
     }
     const retry = await this.retryReplyBrief(messages).catch(() => "");
